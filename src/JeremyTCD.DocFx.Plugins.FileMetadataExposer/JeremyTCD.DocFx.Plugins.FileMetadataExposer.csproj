@@ -7,7 +7,6 @@
     <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
     <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
     <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
-    <Version>0.1.0-beta</Version>
     <Authors>JeremyTCD</Authors>
     <Copyright>Copyright © JeremyTCD 2017</Copyright>
     <PackageLicenseUrl>https://github.com/JeremyTCD/DocFx.Plugins.FileMetadataExposer/blob/master/License.txt</PackageLicenseUrl>
@@ -18,7 +17,6 @@
     <NeutralLanguage>English</NeutralLanguage>
     <Description>A DocFx build-step for exposing file metadata to post-processors.</Description>
     <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
-    <AssemblyVersion>0.0.0.0</AssemblyVersion>
   </PropertyGroup>
 
   <ItemGroup>
