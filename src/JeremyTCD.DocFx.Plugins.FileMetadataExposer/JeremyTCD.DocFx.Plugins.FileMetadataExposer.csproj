@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net452</TargetFramework>
-    <AssemblyName>JeremyTCD.DocFxPlugins.FileMetadataExposer</AssemblyName>
+    <AssemblyName>JeremyTCD.DocFx.Plugins.FileMetadataExposer</AssemblyName>
     <PackageId>JeremyTCD.DocFx.Plugins.FileMetadataExposer</PackageId>
     <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
     <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
