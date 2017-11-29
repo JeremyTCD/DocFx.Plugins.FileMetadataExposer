@@ -1,33 +1,27 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>net452</TargetFramework>
-    <AssemblyName>JeremyTCD.DocFx.Plugins.FileMetadataExposer</AssemblyName>
-    <PackageId>JeremyTCD.DocFx.Plugins.FileMetadataExposer</PackageId>
-    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
-    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
-    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
-    <Authors>JeremyTCD</Authors>
-    <Copyright>Copyright © JeremyTCD 2017</Copyright>
-    <PackageLicenseUrl>https://github.com/JeremyTCD/DocFx.Plugins.FileMetadataExposer/blob/master/License.txt</PackageLicenseUrl>
-    <PackageProjectUrl>https://github.com/JeremyTCD/DocFx.Plugins.FileMetadataExposer</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/JeremyTCD/DocFx.Plugins.FileMetadataExposer</RepositoryUrl>
-    <RepositoryType>GitHub</RepositoryType>
-    <PackageTags>DocFx Plugin FileMetadata Exposer</PackageTags>
-    <NeutralLanguage>English</NeutralLanguage>
-    <Description>A DocFx build-step for exposing file metadata to post-processors.</Description>
-    <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
-  </PropertyGroup>
+    <PropertyGroup>
+        <TargetFramework>net461</TargetFramework>
+        <AssemblyName>JeremyTCD.DocFx.Plugins.FileMetadataExposer</AssemblyName>
+        <PackageId>JeremyTCD.DocFx.Plugins.FileMetadataExposer</PackageId>
+        <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+        <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+        <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+        <Authors>JeremyTCD</Authors>
+        <Copyright>Copyright © JeremyTCD 2017</Copyright>
+        <PackageLicenseUrl>https://github.com/JeremyTCD/DocFx.Plugins.FileMetadataExposer/blob/master/License.txt</PackageLicenseUrl>
+        <PackageProjectUrl>https://github.com/JeremyTCD/DocFx.Plugins.FileMetadataExposer</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/JeremyTCD/DocFx.Plugins.FileMetadataExposer</RepositoryUrl>
+        <RepositoryType>GitHub</RepositoryType>
+        <PackageTags>DocFx Plugin FileMetadata Exposer</PackageTags>
+        <NeutralLanguage>English</NeutralLanguage>
+        <Description>A DocFx build-step for exposing file metadata to post-processors.</Description>
+        <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
+    </PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Microsoft.DocAsCode.Build.ConceptualDocuments" Version="2.13.1" />
-    <PackageReference Include="Microsoft.DocAsCode.Plugins" Version="2.13.1" />
-  </ItemGroup>
-
-  <ItemGroup Condition=" '$(TargetFramework)' == 'net452' ">
-    <Reference Include="System.Web" />
-    <Reference Include="System" />
-    <Reference Include="Microsoft.CSharp" />
-  </ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="Microsoft.DocAsCode.Build.ConceptualDocuments" Version="2.27" />
+        <PackageReference Include="Microsoft.DocAsCode.Plugins" Version="2.27" />
+    </ItemGroup>
 
 </Project>
