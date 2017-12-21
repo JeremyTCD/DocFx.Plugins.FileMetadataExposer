@@ -1,7 +1,4 @@
 version: '{build}'
-branches:
-  only:
-  - master
 skip_non_tags: true
 image: Visual Studio 2017
 environment:
@@ -10,8 +7,9 @@ environment:
 build_script:
 - ps: |
     dotnet restore
-    dotnet build -c release
     cd ./src/JeremyTCD.DocFx.Plugins.FileMetadataExposer
-    dotnet pack -c release --no-build /p:version=$env:APPVEYOR_REPO_TAG_NAME
+    dotnet pack -c release /p:version=$env:APPVEYOR_REPO_TAG_NAME
+deploy_script:
+- ps: |
     nuget setApiKey $env:nuget_key
     nuget push "./bin/release/JeremyTCD.DocFx.Plugins.FileMetadataExposer.$($env:APPVEYOR_REPO_TAG_NAME).nupkg" -Source https://www.nuget.org/api/v2/package
