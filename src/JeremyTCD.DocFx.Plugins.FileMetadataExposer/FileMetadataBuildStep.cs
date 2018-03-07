@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Composition;
 using System.Collections.Immutable;
 using Microsoft.DocAsCode.Build.ConceptualDocuments;
+using Microsoft.DocAsCode.Common;
+using System.IO;
 
 namespace JeremyTCD.DocFx.Plugins.FileMetadataExposer
 {
@@ -22,9 +24,15 @@ namespace JeremyTCD.DocFx.Plugins.FileMetadataExposer
         {
             foreach (FileModel model in models)
             {
-                IDictionary<string, object> content = model.Content as IDictionary<string, object>;
-                if (content != null)
+                if (model.Content is IDictionary<string, object> content)
                 {
+                    // Add relative output path
+                    FileAndType fileAndType = model.FileAndType;
+                    // Copied from DocFx's LinkPhaseHandler.ExportManifest
+                    string pageRelPath = Path.ChangeExtension((RelativePath)fileAndType.DestinationDir + (((RelativePath)fileAndType.File) - (RelativePath)fileAndType.SourceDir), ".html");
+                    content.Add("mimo_pageRelPath", pageRelPath);
+
+                    // Copy all options to manifest properties so they are accessible in post processors
                     IDictionary<string, object> manifestProperties = model.ManifestProperties as IDictionary<string, object>;
 
                     foreach (KeyValuePair<string, object> pair in content)
