@@ -29,7 +29,7 @@ namespace JeremyTCD.DocFx.Plugins.FileMetadataExposer
                     // Add relative output path
                     FileAndType fileAndType = model.FileAndType;
                     // Copied from DocFx's LinkPhaseHandler.ExportManifest
-                    string pageRelPath = Path.ChangeExtension((RelativePath)fileAndType.DestinationDir + (((RelativePath)fileAndType.File) - (RelativePath)fileAndType.SourceDir), ".html");
+                    string pageRelPath = Path.ChangeExtension((RelativePath)fileAndType.DestinationDir + (((RelativePath)fileAndType.File) - (RelativePath)fileAndType.SourceDir), null);
                     content.Add("mimo_pageRelPath", pageRelPath);
 
                     // Copy all options to manifest properties so they are accessible in post processors
