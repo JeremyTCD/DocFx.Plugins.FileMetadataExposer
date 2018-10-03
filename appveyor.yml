@@ -1,15 +1,25 @@
 version: '{build}'
 skip_non_tags: true
 image: Visual Studio 2017
-environment:
-  nuget_key:
-    secure: YuSNfK09e6bNa8EEC2jAsTZP8b8sHN6BDdhrqbI1hRAoqSAUUre5gH8CaW/85NpF
 build_script:
 - ps: |
-    dotnet restore
-    cd ./src/JeremyTCD.DocFx.Plugins.FileMetadataExposer
-    dotnet pack -c release /p:version=$env:APPVEYOR_REPO_TAG_NAME
-deploy_script:
+    dotnet pack -c Release /p:version=$env:APPVEYOR_REPO_TAG_NAME
+test_script:
 - ps: |
-    nuget setApiKey $env:nuget_key
-    nuget push "./bin/release/JeremyTCD.DocFx.Plugins.FileMetadataExposer.$($env:APPVEYOR_REPO_TAG_NAME).nupkg" -Source https://www.nuget.org/api/v2/package
+    cd .\test\FileMetadataExposer.Tests
+    dotnet test -c Release -l trx -r ./ --no-build .\JeremyTCD.DocFx.Plugins.FileMetadataExposer.Tests.csproj
+    if($LastExitCode -ne 0){
+        throw "Tests failed."
+    }
+    # $wc = New-Object 'System.Net.WebClient'
+    # $wc.UploadFile("https://ci.appveyor.com/api/testresults/mstest/$($env:APPVEYOR_JOB_ID)", (Resolve-Path .\*.trx))
+artifacts:
+  - path: '.\src\FileMetadataExposer\bin\Release\*.nupkg'
+deploy:
+  provider: NuGet
+  api_key:
+    secure: YuSNfK09e6bNa8EEC2jAsTZP8b8sHN6BDdhrqbI1hRAoqSAUUre5gH8CaW/85NpF
+  skip_symbols: false
+  artifact: /.*\.nupkg/
+cache:
+    - '%USERPROFILE%\.nuget\packages -> **\*.csproj'
