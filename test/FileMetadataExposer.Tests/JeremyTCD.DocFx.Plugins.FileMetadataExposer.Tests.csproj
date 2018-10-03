@@ -15,7 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\JeremyTCD.DocFx.Plugins.FileMetadataExposer\JeremyTCD.DocFx.Plugins.FileMetadataExposer.csproj" />
+    <ProjectReference Include="..\..\src\FileMetadataExposer\JeremyTCD.DocFx.Plugins.FileMetadataExposer.csproj" />
   </ItemGroup>
 
   <ItemGroup>
