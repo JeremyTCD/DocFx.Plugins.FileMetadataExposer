@@ -11,10 +11,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.gitignore = .gitignore
 		appveyor.yml = appveyor.yml
 		License.txt = License.txt
+		NuGet.Config = NuGet.Config
 		ReadMe.md = ReadMe.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JeremyTCD.DocFx.Plugins.FileMetadataExposer.Tests", "test\FileMetadataExposer.Tests\JeremyTCD.DocFx.Plugins.FileMetadataExposer.Tests.csproj", "{1813ABB2-8026-4BF6-AD92-9E159FE0847F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JeremyTCD.DocFx.Plugins.FileMetadataExposer.Tests", "test\FileMetadataExposer.Tests\JeremyTCD.DocFx.Plugins.FileMetadataExposer.Tests.csproj", "{1813ABB2-8026-4BF6-AD92-9E159FE0847F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,5 +34,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EB8D4A9E-5D5E-445B-A15B-5EBA389D6564}
 	EndGlobalSection
 EndGlobal

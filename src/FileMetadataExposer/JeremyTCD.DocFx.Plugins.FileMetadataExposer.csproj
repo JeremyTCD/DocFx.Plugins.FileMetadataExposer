@@ -20,8 +20,8 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Microsoft.DocAsCode.Build.ConceptualDocuments" Version="2.39.2" />
-        <PackageReference Include="Microsoft.DocAsCode.Plugins" Version="2.39.2" />
+        <PackageReference Include="Microsoft.DocAsCode.Build.ConceptualDocuments" Version="2.39.3" />
+        <PackageReference Include="Microsoft.DocAsCode.Plugins" Version="2.39.3" />
     </ItemGroup>
 
 </Project>
